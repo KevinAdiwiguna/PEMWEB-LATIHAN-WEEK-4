@@ -338,3 +338,54 @@ nav a i {
   font-weight: 500;
   text-decoration: none;
 }
+
+
+#education {
+  margin-top: 80px;
+}
+
+.education-table-wrapper {
+  margin-top: 30px;
+  overflow-x: auto;
+}
+
+.education-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.education-table th {
+  text-align: left;
+  padding: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.education-table td {
+  padding: 16px;
+  border-top: 1px solid var(--color-neutral);
+  font-size: 14px;
+}
+
+.education-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.education-table tbody tr:hover {
+  background: var(--color-base-300);
+}
+
+
+.edu-school {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edu-school i {
+  font-size: 16px;
+  color: #555;
+}
