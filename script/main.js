@@ -63,6 +63,13 @@ links.forEach((link) => {
 	});
 });
 
+window.addEventListener("keydown", (e) => {
+	if (e.key.toLowerCase() === "d") {
+		sidebar.classList.toggle("active");
+		overlay.classList.toggle("active");
+	}
+});
+
 window.addEventListener("resize", () => {
 	if (window.innerWidth >= 1024) {
 		sidebar.classList.remove("active");
