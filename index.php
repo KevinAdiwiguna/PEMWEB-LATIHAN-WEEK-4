@@ -1,3 +1,24 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once __DIR__ . "/controller/contact_controller.php";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (isset($_POST['form_type']) && $_POST['form_type'] === 'contact') {
+        if (createMessage($_POST)) {
+            echo "<script>alert('Pesan berhasil dikirim!'); window.location.href='#contact';</script>";
+        } else {
+            echo "<script>alert('Gagal mengirim pesan.');</script>";
+        }
+    }
+}
+?>
+
+
+<!doctype html>
+<html lang="en">
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -371,7 +392,8 @@
 				<h2>Contact</h2>
 				<p class="secondary-text">Feel free to reach out if you want to collaborate or just say hello.</p>
 
-				<form class="contact-form" action="#" method="post">
+				<form class="contact-form" method="post" action="">
+					<input type="hidden" name="form_type" value="contact">
 					<div class="form-row">
 						<div class="form-group">
 							<label class="secondary-text" for="name">Name</label>
@@ -411,5 +433,4 @@
 		</footer>
 	</body>
 
-	<script src="./script/main.js"></script>
 </html>

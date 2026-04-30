@@ -1,45 +1,43 @@
-const form = document.querySelector(".contact-form");
+// const form = document.querySelector(".contact-form");
 
-form.addEventListener("submit", function (e) {
-	e.preventDefault();
+// form.addEventListener("submit", function (e) {
+// 	const name = document.getElementById("name").value.trim();
+// 	const email = document.getElementById("email").value.trim();
+// 	const subject = document.getElementById("subject").value.trim();
+// 	const message = document.getElementById("message").value.trim();
 
-	const name = document.getElementById("name").value.trim();
-	const email = document.getElementById("email").value.trim();
-	const subject = document.getElementById("subject").value.trim();
-	const message = document.getElementById("message").value.trim();
+// 	let errors = [];
 
-	let errors = [];
+// 	const nameRegex = /^[a-zA-Z\s]+$/;
+// 	if (name.length < 3) {
+// 		errors.push("Nama minimal 3 karakter");
+// 	} else if (!nameRegex.test(name)) {
+// 		errors.push("Nama hanya boleh huruf dan spasi");
+// 	}
 
-	const nameRegex = /^[a-zA-Z\s]+$/;
-	if (name.length < 3) {
-		errors.push("Nama minimal 3 karakter");
-	} else if (!nameRegex.test(name)) {
-		errors.push("Nama hanya boleh huruf dan spasi");
-	}
+// 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// 	if (!emailRegex.test(email)) {
+// 		errors.push("Format email tidak valid");
+// 	}
 
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	if (!emailRegex.test(email)) {
-		errors.push("Format email tidak valid");
-	}
+// 	if (subject.length < 5) {
+// 		errors.push("Subject minimal 5 karakter");
+// 	}
 
-	if (subject.length < 5) {
-		errors.push("Subject minimal 5 karakter");
-	}
+// 	const wordCount = message.split(/\s+/).filter((word) => word.length > 0).length;
+// 	if (wordCount < 10) {
+// 		errors.push("Pesan minimal 10 kata");
+// 	}
+// 	if (errors.length > 0) {
+// 		alert(errors.join("\n"));
+// 		return;
+// 	}
 
-	const wordCount = message.split(/\s+/).filter((word) => word.length > 0).length;
-	if (wordCount < 10) {
-		errors.push("Pesan minimal 10 kata");
-	}
-	if (errors.length > 0) {
-		alert(errors.join("\n"));
-		return;
-	}
+// 	console.log("Form Data:", { name, email, subject, message });
 
-	console.log("Form Data:", { name, email, subject, message });
-
-	alert("Pesan berhasil dikirim!");
-	form.reset();
-});
+// 	alert("Pesan berhasil dikirim!");
+// 	form.reset();
+// });
 
 const toggleBtn = document.getElementById("menu-toggle");
 const sidebar = document.getElementById("sidebar");
@@ -64,7 +62,7 @@ links.forEach((link) => {
 });
 
 window.addEventListener("keydown", (e) => {
-	if (e.key.toLowerCase() === "d") {
+	if (e.key.toLowerCase() === "alt") {
 		sidebar.classList.toggle("active");
 		overlay.classList.toggle("active");
 	}
